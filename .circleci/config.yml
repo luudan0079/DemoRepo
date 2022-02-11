@@ -18,7 +18,7 @@ jobs:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
-          name: Run Tests
+          name: Run ktlintCheck
           command: ./gradlew ktlintCheck
       - run:
           name: Install gems
