@@ -1,5 +1,6 @@
 package com.hbt.demoapplication
 
+import android.icu.number.NumberFormatter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -10,6 +11,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.hbt.demoapplication.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
+import java.io.File
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,8 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
+        setContentView(binding.root);
         setSupportActionBar(binding.toolbar)
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
