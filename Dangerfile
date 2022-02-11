@@ -19,13 +19,12 @@ fail("fit left in tests") if `grep -r fit specs/ `.length > 1
 
 
 # Ktlint
-KTLINT_OUTPUTS = "**/build/reports/ktlint-results.xml"
+KTLINT_OUTPUTS = "**/build/reports/ktlint/ktlint-results.xml"
 Dir[KTLINT_OUTPUTS].each do |file_name|
   checkstyle_format.base_path = Dir.pwd
   checkstyle_format.report file_name
 end
 
-android_lint.lint
 # Android Lint
 LINT_OUTPUTS = "**/build/reports/lint-results.xml"
 Dir[LINT_OUTPUTS].each do |file_name|
