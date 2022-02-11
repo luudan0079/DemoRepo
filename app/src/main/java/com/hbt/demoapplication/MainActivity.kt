@@ -8,6 +8,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.snackbar.Snackbar
 import com.hbt.demoapplication.databinding.ActivityMainBinding
+import kotlinx.coroutines.MainScope
 
 class MainActivity : AppCompatActivity() {
 
