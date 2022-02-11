@@ -25,6 +25,7 @@ Dir[KTLINT_OUTPUTS].each do |file_name|
   checkstyle_format.report file_name
 end
 
+android_lint.lint
 # Android Lint
 LINT_OUTPUTS = "**/build/reports/lint-results.xml"
 Dir[LINT_OUTPUTS].each do |file_name|
