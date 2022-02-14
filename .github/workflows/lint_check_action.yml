@@ -12,10 +12,15 @@
           with:
             java-version: '11'
             distribution: 'temurin'
+
         - name: Build with Gradle
           uses: gradle/gradle-build-action@937999e9cc2425eddc7fd62d1053baf041147db7
           with:
             arguments: build
+
         - name: Run Lint check
           run: ./gradlew ktlintCheck
+
+        - name: Install gem
+          run: bundle install --path vendor/bundle
 
