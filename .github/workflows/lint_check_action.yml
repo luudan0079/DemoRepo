@@ -17,5 +17,5 @@
           with:
             arguments: build
         - name: Run Lint check
-          uses: ./gradlew ktlintCheck
+          run: ./gradlew ktlintCheck
 
