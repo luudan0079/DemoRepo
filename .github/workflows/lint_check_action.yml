@@ -21,6 +21,7 @@
         - name: Run Lint check
           run: ./gradlew ktlintCheck
 
-        - name: Install gem
-          run: bundle install --path vendor/bundle
+        - name: Install Ruby
+          uses: danger/danger
+          run: rbenv global 2.3.1 && gem install danger --version '~> 5.0' && danger
 
