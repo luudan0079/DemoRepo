@@ -24,7 +24,7 @@
         - name: Install Ruby
           uses: actions/setup-ruby@v1
           with:
-            ruby-version: '3.1.0'
+            ruby-version: '2.6'
 
         - name: Install bundle
           run: bundle install --path vendor/bundle
