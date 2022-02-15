@@ -15,6 +15,8 @@ val outputDir = "${project.buildDir}/reports/ktlint/"
 val inputFiles = project.fileTree(mapOf("dir" to "src", "include" to "**/*.kt"))
 val outputFile = "${outputDir}ktlint-results.xml"
 
+println("${outputFile}")
+
 val ktlintCheck by tasks.creating(JavaExec::class) {
   inputs.files(inputFiles)
   outputs.dir(outputDir)
