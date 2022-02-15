@@ -1,0 +1,42 @@
+  name: Lint Check
+  on: pull_request
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+
+        - name: Set up Java JDK
+          uses: actions/setup-java@v2
+          with:
+            java-version: '11'
+            distribution: 'temurin'
+
+        - name: Build with Gradle
+          uses: gradle/gradle-build-action@937999e9cc2425eddc7fd62d1053baf041147db7
+          with:
+            arguments: build
+
+        - name: Run Lint check
+          run: ./gradlew ktlintCheck
+
+        - name: Run Android Lint check
+          run: ./gradlew lint
+
+        - name: Install Ruby
+          uses: actions/setup-ruby@v1
+          with:
+            ruby-version: '2.6'
+
+        - name: Install bundler
+          run: gem install bundler:2.3.3
+
+        - name: Install bundle
+          run: bundle install --path vendor/bundle
+
+        - name: Run Danger
+          env:
+            DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
+          run: bundle exec danger --verbose
+
