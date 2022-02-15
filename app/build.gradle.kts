@@ -2,8 +2,9 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-kapt")
-
 }
+
+apply(from = "${rootDir.absolutePath}/ktlint.gradle.kts")
 
 android {
     compileSdk = 31
