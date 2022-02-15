@@ -24,7 +24,7 @@ Dir[KTLINT_OUTPUTS].each do |file_name|
 end
 
 # Android Lint
-LINT_OUTPUTS = "**/build/reports/ktlint/ktlint-results.xml"
+LINT_OUTPUTS = "**/build/reports/lint-results-debug.xml"
 Dir[LINT_OUTPUTS].each do |file_name|
   android_lint.skip_gradle_task = true
   android_lint.filtering = true

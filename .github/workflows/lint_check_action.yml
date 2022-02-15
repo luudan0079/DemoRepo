@@ -21,6 +21,9 @@
         - name: Run Lint check
           run: ./gradlew ktlintCheck
 
+        - name: Run Android Lint check
+          run: ./gradlew lint
+
         - name: Install Ruby
           uses: actions/setup-ruby@v1
           with:
