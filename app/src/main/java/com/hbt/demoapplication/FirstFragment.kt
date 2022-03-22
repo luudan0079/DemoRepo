@@ -1,5 +1,6 @@
 package com.hbt.demoapplication
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -35,6 +36,11 @@ class FirstFragment : Fragment() {
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+        val pref = requireContext().getSharedPreferences("name", Context.MODE_PRIVATE)
+        val result = pref.getString("key", "defaultValue")
+
+
+        val sharedPreferencesMap = HashMap<String, Any>()
     }
 
     override fun onDestroyView() {
